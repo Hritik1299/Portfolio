@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritik Kumar | Aspiring Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Section 1: Animated Header / Home -->
+<section id="home" class="animated-header">
+  <header class="home-header">
+    <img src="your-photo.jpg" alt="Ritik Kumar" class="home-profile">
+    <div>
+      <h1 class="home-title">Welcome to My Portfolio</h1>
+      <h1>Ritik Kumar</h1>
+      <p>Aspiring Software Engineer | Passionate Web Developer</p>
+      <nav>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
+        <a href="mailto:hkumar875721@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/Hritik1299" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/hritik-kumar-053246223/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+</section>
+
+  <!-- Section 2: About -->
+  <section id="about" class="section">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>Hello! I'm Ritik Kumar, a Computer Science student passionate about building useful, beautiful, and performant web applications. I love solving real-world problems through code and learning new technologies.</p>
+    <p>I strive for clean and efficient code, strong UX/UI, and meaningful projects that contribute to people and business needs.</p>
+  </section>
+
+  <!-- Section 3: Education -->
+  <section id="education" class="section">
+    <h2><i class="fas fa-graduation-cap"></i> Academic Journey</h2>
+
+    
+    <p><strong>DAV Public School:</strong> Established core academic principles in science and mathematics during my 10th grade.</p>
+    <p><strong>APSM College:</strong> Expanded on theoretical and practical knowledge through 12th grade.</p>
+    <p><strong>GLA University (B.Tech CS):</strong> Currently pursuing core CS courses in algorithms, web dev, software engineering, and real-world projects.</p>
+  
+  
+  </section>
+
+  <!-- Section 4: Skills -->
+  <section id="skills" class="section">
+    <h2><i class="fas fa-code"></i> Technical Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>C Programming</h3><p>Efficient memory handling and low-level problem solving.</p></div>
+      <div class="card"><h3>Python</h3><p>Data scripting, automation, and backend development.</p></div>
+      <div class="card"><h3>JavaScript</h3><p>Client-side interactivity and functional programming.</p></div>
+      <div class="card"><h3>HTML/CSS</h3><p>Responsive structure, layout, and styling techniques.</p></div>
+      <div class="card"><h3>Problem Solving</h3><p>Strong understanding of algorithms.</p></div>
+      <div class="card" ><h3>DSA </h3><p>Solving the real world problem through code.</p></div>
+  </section>
+
+  <!-- Section 5: Projects -->
+  <section id="projects" class="section">
+    <h2><i class="fas fa-laptop-code"></i> My Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>This site was built to showcase my journey, skills, and experience.</p>
+        <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>To-Do List App</h3>
+        <p>Task manager built in vanilla JS, designed with responsive layout and persistence.</p>
+        <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Weather App</h3>
+        <p>Fetches real-time weather from OpenWeatherMap API using async JS.</p>
+        <a href="#">Live Demo</a> | <a href="https://github.com/Hritik1299/Weather-App" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Testimonials -->
+  <section id="testimonials" class="section">
+    <h2><i class="fas fa-comment-dots"></i> What People Say</h2>
+    <div class="skills">
+      <div class="card">
+        <p>"Ritik is highly dependable and technically solid. He learns fast and delivers quality work consistently."</p>
+        <p><strong>- Peer Developer</strong></p>
+      </div>
+      <div class="card">
+        <p>"One of the most self-driven students I’ve reviewed this year — very effective at applying feedback."</p>
+        <p><strong>- Project Reviewer</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Contact Form -->
+  <section id="contact" class="section">
+    <h2><i class="fas fa-envelope-open-text"></i> Contact Me</h2>
+    <p>If you'd like to connect, collaborate or just say hello — use the form below or email me directly.</p>
+
+    <form  action="https://formspree.io/f/xldnvndr" method="POST">
+      <p class="form-response" style="display: none;">Thanks for your message! I’ll get back to you soon.</p>
+
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ritik Kumar. Built with clean code and creative spirit.</p>
+  </footer>
+  <script>
+  const form = document.querySelector("form");
+  const responseMsg = document.querySelector(".form-response");
+  form.addEventListener("submit", function (e) {
+    setTimeout(() => {
+      if (responseMsg) responseMsg.style.display = "block";
+    }, 500);
+  });
+</script>
+
+
+</body>
+</html>

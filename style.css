@@ -1,0 +1,319 @@
+/* styles.css with animations, parallax, background gradient, and section layout */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(-45deg, #6ee7b7, #3b82f6, #9333ea, #f43f5e);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-header {
+  background: linear-gradient(135deg, #14b8a6, #3b82f6, #8b5cf6, #f43f5e);
+  background-size: 300% 300%;
+  animation: animatedHeader 10s ease infinite;
+  color: white;
+}
+
+@keyframes animatedHeader {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  scroll-snap-align: start;
+  max-width: 1800px;
+
+}
+
+.parallax {
+  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1470&q=80');
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+header {
+  background-color: rgba(30, 41, 59, 0.9);
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  text-align: center;
+  animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+header h1 {
+  font-size: 2.2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: #38bdf8;
+}
+
+.section {
+  animation: fadeIn 1.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: #2563eb;
+}
+
+.skills,
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+  font-size: 1.2rem;
+}
+
+.card a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #1d4ed8;
+}
+
+footer {
+  background-color: rgba(30, 41, 59, 0.9);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  animation: slideInUp 1s ease-out;
+}
+
+@keyframes slideInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+form button {
+  padding: 0.75rem 2rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+form button:hover {
+  background-color: #1d4ed8;
+}
+form .form-response {
+  text-align: center;
+  color: green;
+  font-weight: 500;
+  padding-top: 1rem;
+}
+
+section.section {
+  padding: 2rem 1rem;
+  min-height: auto;
+  scroll-margin-top: 70px;
+}
+.section p {
+  max-width: 900px;
+  margin: 0.5rem auto 1rem auto;
+  font-size: 1.05rem;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skills, .projects {
+  margin-top: 1.5rem;
+}
+
+.card {
+  min-height: unset;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
+}
+  form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.75rem 2rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #1d4ed8;
+    }
+    section.section {
+      padding: 3rem 1.5rem;
+    }
+    .section p {
+      max-width: 900px;
+      margin: 0.5rem auto 1rem auto;
+      font-size: 1.05rem;
+    }
+    .home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.home-profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
